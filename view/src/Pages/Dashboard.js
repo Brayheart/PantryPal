@@ -1,12 +1,19 @@
-function Dashboard() {
+function Dashboard({ recipes }) {
   return (
     <div className="p-8">
       <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-6">Categories</h2>
-        <div className="flex space-x-4">
-          {/* Placeholder for category cards */}
-          {Array.from({ length: 3 }).map((_, index) => (
-            <div key={index} className="w-1/4 bg-gray-300 h-32"></div>
+        <h2 className="text-2xl font-bold mb-6">Favorite Recipes</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* Use recipes data to display cards */}
+          {recipes.map((recipe, index) => (
+            <div key={index} className="bg-gray-500 p-4 rounded-lg space-y-2">
+              {/* ... */}
+              <h3 className="text-lg font-semibold">{recipe.title}</h3>
+              {/* ... */}
+              <img src={recipe.image} alt={recipe.title} className="" />
+              {/* Display image */}
+              {/* ... */}
+            </div>
           ))}
         </div>
       </div>
